@@ -9,7 +9,8 @@ export default function OrdersPage() {
     const url = '/orders/api'
     const fetcher = () => fetch(url).then(res => res.json()).then(data => data)
     const { data, error, isLoading } = useSWR<OrderWithProducts[]>(url, fetcher, {
-        refreshInterval: 1000,
+        //refreshInterval: 1000
+        refreshInterval: 0,
         revalidateOnFocus: false,
     })
     if (isLoading) return <p>Cargando...</p>
