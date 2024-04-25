@@ -10,6 +10,9 @@ export default function ImageUpload({image} : {image: string | undefined}) {
 
     return (
         <CldUploadWidget
+/*         onSuccess={(result, { widget }) => {
+          console.log(result)
+      }} */
             onSuccess={(result, { widget }) => {
                 if(result.event === 'success') {
                     widget.close()
@@ -17,6 +20,9 @@ export default function ImageUpload({image} : {image: string | undefined}) {
                     setImageUrl(result.info?.secure_url)
                 }
             }}
+
+
+            
             uploadPreset='vw4dd5ff'
             options={{
                 maxFiles: 1
